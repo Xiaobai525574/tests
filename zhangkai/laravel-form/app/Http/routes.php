@@ -14,12 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-
-Route::group(['middleware'=>['web']],function (){
+Route::group(['middle'=>['web']],function (){
     Route::any('student/index',['uses'=>'StudentController@index']);
     Route::any('student/create',['uses'=>'StudentController@create']);
     Route::any('student/save',['uses'=>'StudentController@save']);
 });
-
-
