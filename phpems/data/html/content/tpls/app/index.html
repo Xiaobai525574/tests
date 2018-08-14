@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>transcosmos内部考试系统后台管理</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/datetimepicker.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/jquery-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/peskin.css" />
+	<!--[if lt IE 9]>
+	<script src="app/core/styles/js/html5shiv.min.js"></script>
+	<script src="app/core/styles/js/respond.min.js"></script>
+	<![endif]-->
+	<script src="app/core/styles/js/jquery.min.js"></script>
+	<script src="app/core/styles/js/jquery-ui.min.js"></script>
+	<script src="app/core/styles/js/bootstrap.min.js"></script>
+	<script src="app/core/styles/js/bootstrap-datetimepicker.js"></script>
+
+	<script src="app/core/styles/js/all.fine-uploader.min.js"></script>
+	<script src="app/core/styles/js/ckeditor/js/MathJax.js?config=TeX-AMS_HTML"></script>
+	<script src="app/core/styles/js/ckeditor/ckeditor.js"></script>
+	<script src="app/core/styles/js/plugin.js"></script>
+	<script src="app/core/styles/js/plugin.js"></script>
+</head><body>
+<div class="container-fluid box" style="margin:0px auto;padding-top:10px;overflow:visible">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="col-xs-4">
+				<h1 style="font-size:42px;color:#337AB7;"><img src="app/core/styles/img/logo2.png" style="height:60px;margin-top:-10px;"/><b>transcosmos</b></h1>
+			</div>
+			<div class="col-xs-6" style="padding-top:22px;">
+				<div class="form-inline">
+					<div class="input-group">
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								新闻 <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="index.php?content-app">新闻</a></li>
+								<li><a href="index.php?course-app">课程</a></li>
+								<li><a href="index.php?docs-app">资料</a></li>
+							</ul>
+						</div>
+						<input type="text" style="width:380px;" class="form-control" id="keyword" placeholder="搜索新闻">
+					</div>
+					<button type="button" class="btn btn-primary" onclick="javascript:window.location='index.php?content-app-search&keyword='+$('#keyword').val();"> 搜 索 </button>
+				</div>
+			</div>
+			<div class="col-xs-2" style="padding-top:22px;">
+				<ul class="list-unstyled list-inline">
+										<li>
+						<div class="btn-group">
+							<button type="button" class="btn btn-info"><em class="glyphicon glyphicon-user"></em> peadmin</button>
+							<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span class="caret"></span>
+								<span class="sr-only">Toggle Dropdown</span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="index.php?user-center"><em class="glyphicon glyphicon-user"></em> 用户中心</a></li>
+																<li><a href="index.php?core-master"><em class="glyphicon glyphicon-dashboard"></em> 后台管理</a></li>								<li><a class="ajax" href="index.php?user-app-logout"><em class="glyphicon glyphicon-log-out"></em> 退出</a></li>
+							</ul>
+						</div>
+					</li>
+									</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid navbar" style="margin-top:0px;margin-bottom:0px;padding-top:10px;background-color:#337AB7;">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="col-xs-12">
+				<ul class="list-unstyled list-inline">
+					<li class="menu col-xs-1 active"><a href="index.php" class="icon">首页</a></li>
+					<li class="menu col-xs-1"><a href="index.php?course">课程</a></li>
+					<li class="menu col-xs-1"><a href="index.php?exam">考试</a></li>
+					<li class="menu col-xs-1"><a href="index.php?docs">文档</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div><div class="container-fluid">
+	<div class="row-fluid">
+		<div class="main" style="height:445px;overflow:hidden;">
+			<div class="col-xs-2 box itembox" style="width:22%;height:445px;overflow:hidden;">
+								<h4 class="title">会计基础</h4>
+								<ul class="list-unstyled list-inline">
+										<li><a href="index.php?course-app-course&csid=1">会计基础</a></li>
+									</ul>
+															</div>
+			<div class="col-xs-10 box split" style="padding:0px;width:78%;">
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+					<ol class="carousel-indicators" style="left:90%;bottom:0px;">
+												<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+												<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+											</ol>
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner" role="listbox">
+												<div class="item active">
+							<a href="index.php?content-app-content&contentid=55">
+								<img src="files/attach/images/content/20170429/14933983325087.jpg" alt="" style="width:100%;">
+							</a>
+							<div class="carousel-caption">
+								<!--抛光打蜡效果示意-->
+							</div>
+						</div>
+												<div class="item">
+							<a href="index.php?content-app-content&contentid=54">
+								<img src="files/attach/images/content/20170429/14933983401074.jpg" alt="" style="width:100%;">
+							</a>
+							<div class="carousel-caption">
+								<!--钣金喷漆的效果示例-->
+							</div>
+						</div>
+											</div>
+					<!-- Controls
+					<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+					</a>
+					-->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="main box itembox">
+			<h4 class="title">视频课程</h4>
+			<div class="col-xs-3" style="padding:0px;">
+				<a href="index.php?course-app" class="">
+					<img src="app/core/styles/img/item2.jpg" alt="" width="287">
+				</a>
+			</div>
+			<div class="col-xs-9" style="padding-left:0px;">
+								<div class="col-xs-3">
+					<a href="index.php?course-app-course&csid=1" class="thumbnail">
+						<img src="files/attach/images/content/20171214/15132540301744.jpg" alt="" width="180">
+					</a>
+					<h5 class="text-center">会计基础</h5>
+				</div>
+											</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid hide">
+	<div class="row-fluid">
+		<div class="main"><img src="app/core/styles/img/ad.jpg"/></div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="main box itembox">
+			<h4 class="title">热门考场</h4>
+			<div class="col-xs-3" style="padding:0px;">
+				<a href="index.php?exam-app" class="">
+					<img src="app/core/styles/img/item3.jpg" alt="" width="287">
+				</a>
+			</div>
+			<div class="col-xs-9" style="padding-left:0px;">
+							</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid hide">
+	<div class="row-fluid">
+		<div class="main"><img src="app/core/styles/img/ad2.png"/></div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="col-xs-4 box itembox" style="min-height:320px;">
+				<h4 class="title"><a href="index.php?content-app-category&catid=1">考试信息</a></h4>
+				<ul class="list-unstyled">
+										<li><a href="index.php?content-app-content&contentid=53" title="这是一篇测试性的文章">这是一篇测试性的文章</a></li>
+									</ul>
+			</div>
+			<div class="col-xs-4 box itembox split" style="min-height:320px;">
+				<h4 class="title"><a href="index.php?content-app-category&catid=3">考试资料</a></h4>
+				<ul class="list-unstyled">
+									</ul>
+			</div>
+			<div class="col-xs-4 box itembox" style="min-height:320px;">
+				<h4 class="title"><a href="index.php?content-app-category&catid=4">帮助信息</a></h4>
+				<ul class="list-unstyled">
+									</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid box" style="background-color:#337AB7;margin-bottom:0px;" id="footer">
+	<div class="row-fluid">
+		<div class="main itembox">
+			<div class="col-xs-12">
+				<ul class="list-unstyled">
+					<li class="text-center"><a href="">transcosmos内部考试系统 著作权登记号：2013 SR 113189</a></li>
+					<li class="text-center"><a href="">Copyright © transcosmos.net  2018</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div></body>
+</html>

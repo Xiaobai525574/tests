@@ -17,7 +17,7 @@ class Student extends Model
 
     public $timestamps = true;
 
-    protected function getDateFormat()
+    protected function getDateFormat ()
     {
         return time();
     }
