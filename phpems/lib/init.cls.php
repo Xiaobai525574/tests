@@ -94,9 +94,9 @@ class ginkgo
 		if(!$method)$this->method = $method = 'index';
 		include 'app/'.$app.'/'.$module.'.php';
 		$modulefile = 'app/'.$app.'/controller/'.$method.'.'.$module.'.php';
-		if(file_exists($modulefile))
-		{
-			include $modulefile;
+        if(file_exists($modulefile))
+        {
+            include $modulefile;
 			$tpl = $this->make('tpl');
 			$tpl->assign('_app',$app);
 			$tpl->assign('method',$method);

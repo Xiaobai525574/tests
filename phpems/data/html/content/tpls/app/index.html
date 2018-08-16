@@ -50,19 +50,8 @@
 			</div>
 			<div class="col-xs-2" style="padding-top:22px;">
 				<ul class="list-unstyled list-inline">
-										<li>
-						<div class="btn-group">
-							<button type="button" class="btn btn-info"><em class="glyphicon glyphicon-user"></em> peadmin</button>
-							<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<span class="caret"></span>
-								<span class="sr-only">Toggle Dropdown</span>
-							</button>
-							<ul class="dropdown-menu">
-								<li><a href="index.php?user-center"><em class="glyphicon glyphicon-user"></em> 用户中心</a></li>
-																<li><a href="index.php?core-master"><em class="glyphicon glyphicon-dashboard"></em> 后台管理</a></li>								<li><a class="ajax" href="index.php?user-app-logout"><em class="glyphicon glyphicon-log-out"></em> 退出</a></li>
-							</ul>
-						</div>
-					</li>
+										<li><a href="javascript:;" onclick="javascript:$.loginbox.show();" class="btn btn-default"> 登 录 </a></li>
+					<li><a href="index.php?user-app-register" class="btn btn-default"> 注 册 </a></li>
 									</ul>
 			</div>
 		</div>
@@ -85,8 +74,13 @@
 	<div class="row-fluid">
 		<div class="main" style="height:445px;overflow:hidden;">
 			<div class="col-xs-2 box itembox" style="width:22%;height:445px;overflow:hidden;">
-								<h4 class="title">会计基础</h4>
+								<h4 class="title">22222</h4>
 								<ul class="list-unstyled list-inline">
+										<li><a href="index.php?course-app-course&csid=3">马尔代夫冲浪课程</a></li>
+									</ul>
+																<h4 class="title">会计基础</h4>
+								<ul class="list-unstyled list-inline">
+										<li><a href="index.php?course-app-course&csid=2">课程测试</a></li>
 										<li><a href="index.php?course-app-course&csid=1">会计基础</a></li>
 									</ul>
 															</div>
@@ -142,8 +136,20 @@
 			</div>
 			<div class="col-xs-9" style="padding-left:0px;">
 								<div class="col-xs-3">
+					<a href="index.php?course-app-course&csid=3" class="thumbnail">
+						<img src="app/core/styles/images/noimage.gif" alt="" width="180">
+					</a>
+					<h5 class="text-center">马尔代夫冲浪课程</h5>
+				</div>
+												<div class="col-xs-3">
+					<a href="index.php?course-app-course&csid=2" class="thumbnail">
+						<img src="files/attach/images/content/20180814/15342303317206.jpg" alt="" width="180">
+					</a>
+					<h5 class="text-center">课程测试</h5>
+				</div>
+												<div class="col-xs-3">
 					<a href="index.php?course-app-course&csid=1" class="thumbnail">
-						<img src="files/attach/images/content/20171214/15132540301744.jpg" alt="" width="180">
+						<img src="files/attach/images/content/20180814/15342304845055.jpg" alt="" width="180">
 					</a>
 					<h5 class="text-center">会计基础</h5>
 				</div>
