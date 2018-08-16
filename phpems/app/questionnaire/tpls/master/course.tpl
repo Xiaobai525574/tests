@@ -102,7 +102,8 @@
 					                    <td>{x2;v:course['csid']}</td>
 					                    <td class="picture"><img src="{x2;if:v:course['csthumb']}{x2;v:course['csthumb']}{x2;else}app/core/styles/images/noupload.gif{x2;endif}" alt="" style="width:24px;"/></td>
 					                    <td>
-					                        <a href="index.php?questionnaire-master-index">{x2;v:course['cstitle']}</a>
+
+					                       <a href="index.php?questionnaire-master-index"> {x2;v:course['cstitle']}</a>
 					                    </td>
 					                    <td>
 					                    	<a href="index.php?course-master-course&catid={x2;v:course['cscatid']}" target="">{x2;$categories[v:course['cscatid']]['catname']}</a>
