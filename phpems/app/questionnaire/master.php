@@ -56,6 +56,7 @@ class app
         $this->course = $this->G->make('course','course');
         $this->basic = $this->G->make('basic','exam');
         $this->questionnaire = $this->G->make('questionnaire','questionnaire');
+        $this->comment = $this->G->make('comment','questionnaire');
 
     }
 }

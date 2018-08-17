@@ -32,6 +32,63 @@
 					<embed src="{x2;$content['course_youtu']}" allowFullScreen="true" quality="high" width="100%" height="450" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
 					{x2;endif}
 					<blockquote style="margin-top:10px;" class="text-info">{x2;realhtml:$content['coursedescribe']}</blockquote>
+					<form name="form" action="index.php?questionnaire-app-commment">
+						<table>
+							<tr bgcolor="#a9a9a9">
+								<td>
+									课程感想
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<textarea style="height:100px; width:750px""></textarea>
+								</td>
+							</tr>
+							<tr>
+								<td bgcolor="#a9a9a9">
+									课程遇到的问题、建议
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<textarea style="height:100px; width:750px""></textarea>
+								</td>
+							</tr>
+							<tr>
+								<td bgcolor="#a9a9a9">
+									期望的课程内容
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<textarea style="height:100px; width:750px""></textarea>
+								</td>
+							</tr>
+							<tr>
+								<td bgcolor="#a9a9a9">
+									其他
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<textarea style="height:100px; width:750px""></textarea>
+								</td>
+							</tr>
+							<tr>
+								<td bgcolor="#a9a9a9">
+									未出席原因
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="text" style="width: 750px">
+								</td>
+							</tr>
+						</table>
+						<div style="margin-top: 20px">
+							<button type="submit" style="height:40px;width: 60px;">提交</button>
+						</div>
+					</form>
 				</div>
 			</div>
 			<div class="col-xs-4 pull-right" style="padding-right:0px;">
