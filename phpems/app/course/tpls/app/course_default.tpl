@@ -32,7 +32,7 @@
 					<embed src="{x2;$content['course_youtu']}" allowFullScreen="true" quality="high" width="100%" height="450" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
 					{x2;endif}
 					<blockquote style="margin-top:10px;" class="text-info">{x2;realhtml:$content['coursedescribe']}</blockquote>
-					<form name="form" action="index.php?questionnaire-app-commment">
+					<form name="form" action="index.php?course-app-commment">
 						<table>
 							<tr bgcolor="#a9a9a9">
 								<td>
@@ -41,7 +41,7 @@
 							</tr>
 							<tr>
 								<td>
-									<textarea style="height:100px; width:750px""></textarea>
+									<textarea style="height:100px; width:750px" name="qthoughts"></textarea>
 								</td>
 							</tr>
 							<tr>
@@ -51,7 +51,7 @@
 							</tr>
 							<tr>
 								<td>
-									<textarea style="height:100px; width:750px""></textarea>
+									<textarea style="height:100px; width:750px" name="qadvice"></textarea>
 								</td>
 							</tr>
 							<tr>
@@ -61,7 +61,7 @@
 							</tr>
 							<tr>
 								<td>
-									<textarea style="height:100px; width:750px""></textarea>
+									<textarea style="height:100px; width:750px" name="qexpect"></textarea>
 								</td>
 							</tr>
 							<tr>
@@ -71,7 +71,7 @@
 							</tr>
 							<tr>
 								<td>
-									<textarea style="height:100px; width:750px""></textarea>
+									<textarea style="height:100px; width:750px" name="qother"></textarea>
 								</td>
 							</tr>
 							<tr>
@@ -81,7 +81,7 @@
 							</tr>
 							<tr>
 								<td>
-									<input type="text" style="width: 750px">
+									<input type="text" style="width: 750px" name="qnon-attendance">
 								</td>
 							</tr>
 						</table>

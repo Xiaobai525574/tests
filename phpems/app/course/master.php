@@ -41,6 +41,7 @@ class app
 		$this->tpl->assign('apps',$apps);
 		$modules = $this->module->getModulesByApp('course');
 		$groups = $this->user->getUserGroups();
+		$comment = $this->comment->getDocHistroyById();
 		$user = $this->user->getUserById($_user['sessionuserid']);
 		$user['manager_apps'] = unserialize($user['manager_apps']);
 		$this->tpl->assign('_user',$user);
@@ -51,8 +52,10 @@ class app
 		}
 		$this->tpl->assign('modules',$modules);
 		$this->tpl->assign('groups',$groups);
+        $this->tpl->assign('comment',$comment);
 		$this->tpl->assign('userhash',$this->ev->get('userhash'));
 		$this->content = $this->G->make('content','course');
+        $this->comment = $this->G->make('comment','course');
 		$this->course = $this->G->make('course','course');
 		$this->basic = $this->G->make('basic','exam');
 	}

@@ -31,11 +31,22 @@ class doc_docs
         return $r['number'];
     }
 
-    public function getDocList($args,$page,$number = 20,$order = 'courseid desc')
+    public function getCourseList($args,$page,$number = 20,$order = 'courseid desc')
     {
         $data = array(
             'select' => false,
             'table' => 'course',
+            'query' => $args,
+            'orderby' => $order
+        );
+        $r = $this->db->listElements($page,$number,$data);
+        return $r;
+    }
+    public function getDocList($args,$page,$number = 20,$order = 'userid desc')
+    {
+        $data = array(
+            'select' => false,
+            'table' => 'user',
             'query' => $args,
             'orderby' => $order
         );
@@ -75,7 +86,7 @@ class doc_docs
     }
     public function getCourseId($courseid)
     {
-        $data = array(false,'user',array(array('AND',"courseid = :courseid",'courseid',$courseid)));
+        $data = array(false,'course',array(array('AND',"courseid = :courseid",'courseid',$courseid)));
         $sql = $this->pdosql->makeSelect($data);
         $r = $this->db->fetch($sql);
         return $r;

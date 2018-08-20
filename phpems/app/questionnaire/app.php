@@ -19,7 +19,6 @@ class app
         $this->session = $this->G->make('session');
         $this->questionnaire = $this->G->make('questionnaire');
         $this->user = $this->G->make('user','user');
-        $this->comment = $this->G->make('comment','questionnaire');
         $this->_user = $_user = $this->session->getSessionUser();
         $group = $this->user->getGroupById($_user['sessiongroupid']);
         /*登录验证*/
@@ -38,7 +37,6 @@ class app
         }
 
         $this->question = $this->G->make('question', 'questionnaire');
-        $this->comment = $this->G->make('comment', 'questionnaire');
 
 
         $this->tpl->assign('_user',$this->user->getUserById($this->_user['sessionuserid']));

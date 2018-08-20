@@ -249,11 +249,11 @@ class action extends app
 
 	public  function  toExclel()
 	{
-		$mysqli = mysqli_connect('localhost', 'root', 'root', 'kaoshi');
+		$mysqli = mysqli_connect('172.17.1.45', 'root', 'root', 'phpems');
 		$sql = 'select *  from x2_questionnaire';
 		$res = mysqli_query($mysqli, $sql);
 		header("Content-type:application/vnd.ms-excel");
-		header("Content-Disposition:filename=country.xls");
+		header("Content-Disposition:filename=phpems.xls");
 		echo "questionnaireid\t";
 		echo "userid\t";
 		echo "courseid\t";

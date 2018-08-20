@@ -30,17 +30,17 @@ class action extends app
         $this->tpl->assign('comment',$doc);
         $this->tpl->assign('comment',$course);
         $this->tpl->assign('histories', $histories);
-        $this->tpl->display('comment');
+        $this->tpl->display('course_default');
     }
 
     private function viewhistory()
     {
-        $dhid = $this->ev->get('questionnaireid');
-        $history = $this->doc->getDocHistroyById($dhid);
-        $doc = $this->doc->getDocById($history['userid']);
+        $questionnaireid = $this->ev->get('questionnaireid');
+        $history = $this->comment->getDocHistroyById($questionnaireid);
+        $doc = $this->comment->getDocById($history['userid']);
         $doc['content'] = $history;
         $this->tpl->assign('doc',$doc);
-        $this->tpl->display('comment');
+        $this->tpl->display('course_default');
     }
 
     private function index()
