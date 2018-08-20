@@ -125,10 +125,10 @@
 					                    -->
 					                    <td class="actions">
 					                    	<div class="btn-group">
-												<a class="btn" href="index.php?questionnaire-master-course-toExclel" title="导出EXECL"><em class="glyphicon-cloud"></em></a>
-					                    		<a class="btn" href="index.php?course-master-course-members&courseid=<?php echo $course['csid']; ?>" title="人员管理"><em class="glyphicon glyphicon-user"></em></a>
-					                    		<a class="btn" href="index.php?course-master-contents&courseid=<?php echo $course['csid']; ?>" title="课件列表"><em class="glyphicon glyphicon-list"></em></a>
-												<a class="btn" href="index.php?course-master-course-edit&catid=<?php echo $course['cscatid']; ?>&courseid=<?php echo $course['csid']; ?>&page=<?php echo $this->tpl_var['page']; ?><?php echo $this->tpl_var['u']; ?>" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn" href="index.php?questionnaire-master-course-toExclel&courseid=<?php echo $course['csid']; ?>" " title="导出EXECL"><em class="glyphicon-cloud"></em></a>
+					                    		<a class="btn" href="index.php?questionnaire-master-course-members&courseid=<?php echo $course['csid']; ?>" title="人员管理"><em class="glyphicon glyphicon-user"></em></a>
+					                    		<a class="btn" href="index.php?questionnaire-master-contents&courseid=<?php echo $course['csid']; ?>" title="课件列表"><em class="glyphicon glyphicon-list"></em></a>
+												<a class="btn" href="index.php?questionnaire-master-course-edit&catid=<?php echo $course['cscatid']; ?>&courseid=<?php echo $course['csid']; ?>&page=<?php echo $this->tpl_var['page']; ?><?php echo $this->tpl_var['u']; ?>" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
 												<a class="btn confirm" href="index.php?course-master-course-del&catid=<?php echo $course['cscatid']; ?>&courseid=<?php echo $course['csid']; ?>&page=<?php echo $this->tpl_var['page']; ?><?php echo $this->tpl_var['u']; ?>" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
 					                    	</div>
 					                    </td>

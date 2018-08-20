@@ -121,7 +121,7 @@
 					                    -->
 					                    <td class="actions">
 					                    	<div class="btn-group">
-												<a class="btn" href="index.php?questionnaire-master-course-toExclel" title="导出EXECL"><em class="glyphicon-cloud"></em></a>
+												<a class="btn" href="index.php?questionnaire-master-course-toExclel&courseid={x2;v:course['csid']}" " title="导出EXECL"><em class="glyphicon-cloud"></em></a>
 					                    		<a class="btn" href="index.php?questionnaire-master-course-members&courseid={x2;v:course['csid']}" title="人员管理"><em class="glyphicon glyphicon-user"></em></a>
 					                    		<a class="btn" href="index.php?questionnaire-master-contents&courseid={x2;v:course['csid']}" title="课件列表"><em class="glyphicon glyphicon-list"></em></a>
 												<a class="btn" href="index.php?questionnaire-master-course-edit&catid={x2;v:course['cscatid']}&courseid={x2;v:course['csid']}&page={x2;$page}{x2;$u}" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
