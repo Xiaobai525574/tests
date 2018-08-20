@@ -261,7 +261,7 @@ class action extends app
 		echo "qadvice\t";
 		echo "qexpect\t";
 		echo "qother\t";
-		echo "qnon-attendance\t\n";
+		echo "qreason\t\n";
 		if (mysqli_num_rows($res) > 0) {
 			while ($row = mysqli_fetch_array($res)) {
 				echo $row['questionnaireid'] . "\t";
@@ -271,7 +271,7 @@ class action extends app
 				echo $row['qadvice'] . "\t";
 				echo $row['qexpect'] . "\t";
 				echo $row['qother'] . "\t";
-				echo $row['qnon-attendance'] . "\t\n";
+				echo $row['qreason'] . "\t\n";
 			}
 		}
 	}
