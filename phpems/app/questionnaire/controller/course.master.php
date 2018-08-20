@@ -246,14 +246,13 @@ class action extends app
 		echo intval($number);
 	}
 
-	public  function  toexclel()
+	public  function  toExclel()
 	{
-//		$courseid = $this->ev->get('courseid');
-//
-//		$courseid->get();
+	    $courseid = $this->ev->get('courseid');
+
 		$mysqli = mysqli_connect('172.17.1.45', 'root', 'root', 'phpems');
-		$sql = 'select *  from x2_questionnaire';
-		$res = mysqli_query($mysqli, $sql);
+
+		$res = mysqli_query($mysqli,"select *  from x2_questionnaire where courseid='$courseid' ");
 
 
 		header("Content-type:application/vnd.ms-excel; charset=UTF-8");
