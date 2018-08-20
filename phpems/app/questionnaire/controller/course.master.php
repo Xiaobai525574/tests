@@ -255,9 +255,9 @@ class action extends app
 		$res = mysqli_query($mysqli,"select *  from x2_questionnaire where courseid='$courseid' ");
 
 
-		header("Content-type:application/vnd.ms-excel; charset=UTF-8");
+		header("Content-type:application/vnd.ms-excel");
 
-		header("Content-Disposition:attachment;filename=phpems.xls");
+		header("Content-Disposition:filename=phpems.xls");
 
 
 		echo "questionnaireid\t";
@@ -270,27 +270,28 @@ class action extends app
 		echo "qreason\t\n";
 		if (mysqli_num_rows($res) > 0) {
 			while ($row = mysqli_fetch_array($res)) {
-				echo $row['questionnaireid'] . "\t";
-				echo $row['userid'] . "\t";
-				echo $row['courseid'] . "\t";
-				echo $row['qthoughts'] . "\t";
-				echo $row['qadvice'] . "\t";
-				echo $row['qexpect'] . "\t";
-				echo $row['qother'] . "\t";
-				echo $row['qreason'] . "\t\n";
+//				echo $row['questionnaireid'] . "\t";
+//				echo $row['userid'] . "\t";
+//				echo $row['courseid'] . "\t";
+//				echo $row['qthoughts'] . "\t";
+//				echo $row['qadvice'] . "\t";
+//				echo $row['qexpect'] . "\t";
+//				echo $row['qother'] . "\t";
+//				echo $row['qreason'] . "\t\n";
 
-//				echo iconv("UTF-8", "UTF-8",$row['questionnaireid']) . "\t";
-//				echo iconv("UTF-8", "UTF-8",$row['userid']) . "\t";
-//				echo iconv("UTF-8", "UTF-8",$row['courseid']) . "\t";
-//				echo iconv("UTF-8", "UTF-8",$row['qthoughts']) . "\t";
-//				echo iconv("UTF-8", "UTF-8",$row['qadvice']) . "\t";
-//				echo iconv("UTF-8", "UTF-8",$row['qexpect']) . "\t";
-//				echo iconv("UTF-8", "UTF-8",$row['qother']) . "\t";
-//				echo iconv("UTF-8", "UTF-8",$row['qnon-attendance']) . "\t\n";
+				echo iconv("UTF-8", "GB2312//IGNORE",$row['questionnaireid']) . "\t";
+				echo iconv("UTF-8", "GB2312//IGNORE",$row['userid']) . "\t";
+				echo iconv("UTF-8", "GB2312//IGNORE",$row['courseid']) . "\t";
+				echo iconv("UTF-8", "GB2312//IGNORE",$row['qthoughts']) . "\t";
+				echo iconv("UTF-8", "GB2312//IGNORE",$row['qadvice']) . "\t";
+				echo iconv("UTF-8", "GB2312//IGNORE",$row['qexpect']) . "\t";
+				echo iconv("UTF-8", "GB2312//IGNORE",$row['qother']) . "\t";
+				echo iconv("UTF-8", "GB2312//IGNORE",$row['qreason']) . "\t\n";
 
 			}
 		}
 	}
+
 
 	private function members()
 	{
