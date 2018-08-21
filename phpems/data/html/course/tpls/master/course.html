@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>transcosmos内部考试系统后台管理</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/datetimepicker.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/jquery-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/peskin.css" />
+	<!--[if lt IE 9]>
+	<script src="app/core/styles/js/html5shiv.min.js"></script>
+	<script src="app/core/styles/js/respond.min.js"></script>
+	<![endif]-->
+	<script src="app/core/styles/js/jquery.min.js"></script>
+	<script src="app/core/styles/js/jquery-ui.min.js"></script>
+	<script src="app/core/styles/js/bootstrap.min.js"></script>
+	<script src="app/core/styles/js/bootstrap-datetimepicker.js"></script>
+
+	<script src="app/core/styles/js/all.fine-uploader.min.js"></script>
+
+	<script src="app/core/styles/js/ckeditor/ckeditor.js"></script>
+	<script src="app/core/styles/js/plugin.js"></script>
+</head><body>
+<div class="container-fluid box" style="margin:0px auto;padding-top:10px;overflow:visible">	<div class="row-fluid">		<div class="main">			<div class="col-xs-10">				<h2 style="color:#337AB7;"><a href="index.php"><img src="app/core/styles/img/logo2.png" style="height:60px;margin-top:-10px;"/>&nbsp;transcosmos管理平台</a></h2>			</div>			<div class="col-xs-2" style="padding-top:22px;">				<ul class="list-unstyled list-inline">										<li>						<div class="btn-group">							<button type="button" class="btn btn-info"><em class="glyphicon glyphicon-user"></em> peadmin</button>							<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">								<span class="caret"></span>								<span class="sr-only">Toggle Dropdown</span>							</button>							<ul class="dropdown-menu">								<li><a href="index.php?user-center"><em class="glyphicon glyphicon-user"></em> 用户中心</a></li>																<li><a href="index.php?core-master"><em class="glyphicon glyphicon-dashboard"></em> 后台管理</a></li>								<li><a class="ajax" href="index.php?user-app-logout"><em class="glyphicon glyphicon-log-out"></em> 退出</a></li>							</ul>						</div>					</li>									</ul>			</div>		</div>	</div></div><div class="container-fluid navbar" style="margin-top:0px;margin-bottom:0px;padding-top:10px;background-color:#337AB7;">	<div class="row-fluid">		<div class="main">			<div class="col-xs-12">				<ul class="list-unstyled list-inline">					<li class="menu col-xs-1">						<a href="index.php?core-master">全局</a>					</li>																				<li class="menu col-xs-1">						<a href="index.php?user-master">用户模块</a>					</li>																				<li class="menu col-xs-1">						<a href="index.php?exam-master">考试模块</a>					</li>																														<li class="menu col-xs-1">						<a href="index.php?document-master">文件模块</a>					</li>																				<li class="menu col-xs-1">						<a href="index.php?content-master">内容模块</a>					</li>																				<li class="menu col-xs-1">						<a href="index.php?bank-master">财务模块</a>					</li>																				<li class="menu col-xs-1 active">						<a href="index.php?course-master">课程模块</a>					</li>																				<li class="menu col-xs-1">						<a href="index.php?docs-master">文档模块</a>					</li>																			</ul>			</div>		</div>	</div></div><div class="container-fluid">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="col-xs-2" style="padding-top:10px;margin-bottom:0px;">
+				<ul class="list-group">	<li class="list-group-item ">				<a href="index.php?course-master">首页</a>			</li>	<li class="list-group-item ">				<a href="index.php?course-master-category">课程分类</a>			</li>	<li class="list-group-item active">		课程管理			</li>	<li class="list-group-item ">				<a href="index.php?course-master-module">模型管理</a>			</li></ul>			</div>
+			<div class="col-xs-10" id="datacontent">
+				<div class="box itembox" style="margin-bottom:0px;border-bottom:1px solid #CCCCCC;">
+					<div class="col-xs-12">
+						<ol class="breadcrumb">
+							<li><a href="index.php?course-master">课程模块</a></li>
+														<li class="active">课程管理</li>
+													</ol>
+					</div>
+				</div>
+				<div class="box itembox" style="padding-top:10px;margin-bottom:0px;">
+					<h4 class="title" style="padding:10px;">
+						分类管理
+						<a class="btn btn-primary pull-right" href="index.php?course-master-course-add&catid=&page=1">添加课程</a>
+					</h4>
+					<h4>所有课程</h4>
+					<form action="index.php?course-master-course" method="post" class="form-inline">
+						<table class="table">
+					        <tr>
+								<td>
+									课程ID：
+								</td>
+								<td>
+									<input name="search[courseid]" class="form-control" size="15" type="text" class="number" value=""/>
+								</td>
+								<td>
+									录入时间：
+								</td>
+								<td>
+									<input class="form-control datetimepicker" data-date="2018-08-20" data-date-format="yyyy-mm-dd" type="text" name="search[stime]" size="10" id="stime" value=""/> - <input class="form-control datetimepicker" data-date="2018-08-20" data-date-format="yyyy-mm-dd" size="10" type="text" name="search[etime]" id="etime" value=""/>
+								</td>
+								<td>
+									关键字：
+								</td>
+								<td>
+									<input class="form-control" name="search[keyword]" size="15" type="text" value=""/>
+								</td>
+							</tr>
+					        <tr>
+								<td>
+									分类：
+								</td>
+								<td colspan="3">
+							  		<div class="form-inline form-group">
+								  		<select msg="您必须选择一个分类" class="autocombox form-control" name="search[cscatid]" refUrl="index.php?course-master-category-ajax-getchildcategory&catid={value}">
+							            	<option value="">选择一级分类</option>
+							            								            	<option value="13">22222</option>
+							            								            	<option value="5">会计基础</option>
+							            								            </select>
+						            </div>
+					        	</td>
+								<td>
+									<button class="btn btn-primary" type="submit">提交</button>
+								</td>
+								<td></td>
+					        </tr>
+						</table>
+						<div class="input">
+							<input type="hidden" value="1" name="search[argsmodel]" />
+						</div>
+					</form>
+					<form action="index.php?course-master-course-lite" method="post">
+						<fieldset>
+							<table class="table table-hover table-bordered">
+								<thead>
+									<tr class="info">
+					                    <th width="36"><input type="checkbox" class="checkall" target="delids"/></th>
+					                    <th width="40">权重</th>
+					                    <th width="36">ID</th>
+					                    <th width="80">缩略图</th>
+								        <th>标题</th>
+								        <th width="100">分类</th>
+								        <th width="100">发布时间</th>
+								        <th width="100">开通人数</th>
+								        <!--
+								        <th width="100">申请人数</th>
+								        -->
+								        <th width="180">操作</th>
+					                </tr>
+					            </thead>
+					            <tbody>
+					            						            	<tr>
+					                    <td><input type="checkbox" name="delids[6]" value="1"></td>
+					                    <td><input class="form-control" type="text" name="ids[6]" value="0" style="width:36px;padding:2px 5px;"/></td>
+					                    <td>6</td>
+					                    <td class="picture"><img src="app/core/styles/images/noimage.gif" alt="" style="width:24px;"/></td>
+					                    <td>
+					                        <a href="index.php?questionnaire-master-index"></a>
+					                    </td>
+					                    <td>
+					                    	<a href="index.php?course-master-course&catid=5" target="">会计基础</a>
+					                    </td>
+					                    <td>
+					                    	2018-08-17					                    </td>
+					                    <td>
+					                        <a href="index.php?course-master-course-members&courseid=6" class="autoloaditem" autoload="index.php?course-master-course-getcoursemembernumber&courseid=6">0</a>
+					                    </td>
+					                    <!--
+					                    <td>
+					                        					                    </td>
+					                    -->
+					                    <td class="actions">
+					                    	<div class="btn-group">
+												<a class="btn" href="index.php?course-master-course-toExclel" title="导出EXECL"><em class="glyphicon-cloud"></em></a>
+					                    		<a class="btn" href="index.php?course-master-course-members&courseid=6" title="人员管理"><em class="glyphicon glyphicon-user"></em></a>
+					                    		<a class="btn" href="index.php?course-master-contents&courseid=6" title="课件列表"><em class="glyphicon glyphicon-list"></em></a>
+												<a class="btn" href="index.php?course-master-course-edit&catid=5&courseid=6&page=1" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?course-master-course-del&catid=5&courseid=6&page=1" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[5]" value="1"></td>
+					                    <td><input class="form-control" type="text" name="ids[5]" value="0" style="width:36px;padding:2px 5px;"/></td>
+					                    <td>5</td>
+					                    <td class="picture"><img src="files/attach/images/content/20180817/15344864619709.jpg" alt="" style="width:24px;"/></td>
+					                    <td>
+					                        <a href="index.php?questionnaire-master-index">FDSGDSH</a>
+					                    </td>
+					                    <td>
+					                    	<a href="index.php?course-master-course&catid=13" target="">22222</a>
+					                    </td>
+					                    <td>
+					                    	2018-08-17					                    </td>
+					                    <td>
+					                        <a href="index.php?course-master-course-members&courseid=5" class="autoloaditem" autoload="index.php?course-master-course-getcoursemembernumber&courseid=5">0</a>
+					                    </td>
+					                    <!--
+					                    <td>
+					                        FDSGDSH					                    </td>
+					                    -->
+					                    <td class="actions">
+					                    	<div class="btn-group">
+												<a class="btn" href="index.php?course-master-course-toExclel" title="导出EXECL"><em class="glyphicon-cloud"></em></a>
+					                    		<a class="btn" href="index.php?course-master-course-members&courseid=5" title="人员管理"><em class="glyphicon glyphicon-user"></em></a>
+					                    		<a class="btn" href="index.php?course-master-contents&courseid=5" title="课件列表"><em class="glyphicon glyphicon-list"></em></a>
+												<a class="btn" href="index.php?course-master-course-edit&catid=13&courseid=5&page=1" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?course-master-course-del&catid=13&courseid=5&page=1" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[4]" value="1"></td>
+					                    <td><input class="form-control" type="text" name="ids[4]" value="0" style="width:36px;padding:2px 5px;"/></td>
+					                    <td>4</td>
+					                    <td class="picture"><img src="app/core/styles/images/noimage.gif" alt="" style="width:24px;"/></td>
+					                    <td>
+					                        <a href="index.php?questionnaire-master-index">sdfasdf</a>
+					                    </td>
+					                    <td>
+					                    	<a href="index.php?course-master-course&catid=13" target="">22222</a>
+					                    </td>
+					                    <td>
+					                    	2018-08-17					                    </td>
+					                    <td>
+					                        <a href="index.php?course-master-course-members&courseid=4" class="autoloaditem" autoload="index.php?course-master-course-getcoursemembernumber&courseid=4">0</a>
+					                    </td>
+					                    <!--
+					                    <td>
+					                        sdfasdf					                    </td>
+					                    -->
+					                    <td class="actions">
+					                    	<div class="btn-group">
+												<a class="btn" href="index.php?course-master-course-toExclel" title="导出EXECL"><em class="glyphicon-cloud"></em></a>
+					                    		<a class="btn" href="index.php?course-master-course-members&courseid=4" title="人员管理"><em class="glyphicon glyphicon-user"></em></a>
+					                    		<a class="btn" href="index.php?course-master-contents&courseid=4" title="课件列表"><em class="glyphicon glyphicon-list"></em></a>
+												<a class="btn" href="index.php?course-master-course-edit&catid=13&courseid=4&page=1" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?course-master-course-del&catid=13&courseid=4&page=1" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[3]" value="1"></td>
+					                    <td><input class="form-control" type="text" name="ids[3]" value="0" style="width:36px;padding:2px 5px;"/></td>
+					                    <td>3</td>
+					                    <td class="picture"><img src="app/core/styles/images/noimage.gif" alt="" style="width:24px;"/></td>
+					                    <td>
+					                        <a href="index.php?questionnaire-master-index">马尔代夫冲浪课程</a>
+					                    </td>
+					                    <td>
+					                    	<a href="index.php?course-master-course&catid=13" target="">22222</a>
+					                    </td>
+					                    <td>
+					                    	2018-08-15					                    </td>
+					                    <td>
+					                        <a href="index.php?course-master-course-members&courseid=3" class="autoloaditem" autoload="index.php?course-master-course-getcoursemembernumber&courseid=3">0</a>
+					                    </td>
+					                    <!--
+					                    <td>
+					                        马尔代夫冲浪课程					                    </td>
+					                    -->
+					                    <td class="actions">
+					                    	<div class="btn-group">
+												<a class="btn" href="index.php?course-master-course-toExclel" title="导出EXECL"><em class="glyphicon-cloud"></em></a>
+					                    		<a class="btn" href="index.php?course-master-course-members&courseid=3" title="人员管理"><em class="glyphicon glyphicon-user"></em></a>
+					                    		<a class="btn" href="index.php?course-master-contents&courseid=3" title="课件列表"><em class="glyphicon glyphicon-list"></em></a>
+												<a class="btn" href="index.php?course-master-course-edit&catid=13&courseid=3&page=1" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?course-master-course-del&catid=13&courseid=3&page=1" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[2]" value="1"></td>
+					                    <td><input class="form-control" type="text" name="ids[2]" value="0" style="width:36px;padding:2px 5px;"/></td>
+					                    <td>2</td>
+					                    <td class="picture"><img src="files/attach/images/content/20180814/15342303317206.jpg" alt="" style="width:24px;"/></td>
+					                    <td>
+					                        <a href="index.php?questionnaire-master-index">课程测试</a>
+					                    </td>
+					                    <td>
+					                    	<a href="index.php?course-master-course&catid=5" target="">会计基础</a>
+					                    </td>
+					                    <td>
+					                    	2018-08-14					                    </td>
+					                    <td>
+					                        <a href="index.php?course-master-course-members&courseid=2" class="autoloaditem" autoload="index.php?course-master-course-getcoursemembernumber&courseid=2">0</a>
+					                    </td>
+					                    <!--
+					                    <td>
+					                        课程测试					                    </td>
+					                    -->
+					                    <td class="actions">
+					                    	<div class="btn-group">
+												<a class="btn" href="index.php?course-master-course-toExclel" title="导出EXECL"><em class="glyphicon-cloud"></em></a>
+					                    		<a class="btn" href="index.php?course-master-course-members&courseid=2" title="人员管理"><em class="glyphicon glyphicon-user"></em></a>
+					                    		<a class="btn" href="index.php?course-master-contents&courseid=2" title="课件列表"><em class="glyphicon glyphicon-list"></em></a>
+												<a class="btn" href="index.php?course-master-course-edit&catid=5&courseid=2&page=1" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?course-master-course-del&catid=5&courseid=2&page=1" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[1]" value="1"></td>
+					                    <td><input class="form-control" type="text" name="ids[1]" value="0" style="width:36px;padding:2px 5px;"/></td>
+					                    <td>1</td>
+					                    <td class="picture"><img src="files/attach/images/content/20180814/15342304845055.jpg" alt="" style="width:24px;"/></td>
+					                    <td>
+					                        <a href="index.php?questionnaire-master-index">会计基础</a>
+					                    </td>
+					                    <td>
+					                    	<a href="index.php?course-master-course&catid=5" target="">会计基础</a>
+					                    </td>
+					                    <td>
+					                    	2016-06-29					                    </td>
+					                    <td>
+					                        <a href="index.php?course-master-course-members&courseid=1" class="autoloaditem" autoload="index.php?course-master-course-getcoursemembernumber&courseid=1">0</a>
+					                    </td>
+					                    <!--
+					                    <td>
+					                        会计基础					                    </td>
+					                    -->
+					                    <td class="actions">
+					                    	<div class="btn-group">
+												<a class="btn" href="index.php?course-master-course-toExclel" title="导出EXECL"><em class="glyphicon-cloud"></em></a>
+					                    		<a class="btn" href="index.php?course-master-course-members&courseid=1" title="人员管理"><em class="glyphicon glyphicon-user"></em></a>
+					                    		<a class="btn" href="index.php?course-master-contents&courseid=1" title="课件列表"><em class="glyphicon glyphicon-list"></em></a>
+												<a class="btn" href="index.php?course-master-course-edit&catid=5&courseid=1&page=1" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?course-master-course-del&catid=5&courseid=1&page=1" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					        	</tbody>
+					        </table>
+					        <div class="form-group">
+					            <div class="controls">
+						            <label class="radio-inline">
+						                <input type="radio" name="action" value="modify" checked/>排序
+						            </label>
+						            <label class="radio-inline">
+						                <input type="radio" name="action" value="movecategory" />移动
+						            </label>
+						            <label class="radio-inline">
+						                <input type="radio" name="action" value="delete" />删除
+						            </label>
+						            						            <label class="radio-inline">
+						            	<button class="btn btn-primary" type="submit">提交</button>
+						            </label>
+						            <input type="hidden" name="modifycoursesequence" value="1"/>
+						            <input type="hidden" name="catid" value=""/>
+						            <input type="hidden" name="page" value="1"/>
+						        </div>
+					        </div>
+							<ul class="pagination pull-right">
+															</ul>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid box" style="background-color:#337AB7;margin-bottom:0px;" id="footer">
+	<div class="row-fluid">
+		<div class="main itembox">
+			<div class="col-xs-12">
+				<ul class="list-unstyled">
+					<li class="text-center"><a href="">transcosmos内部考试系统 著作权登记号：2013 SR 113189</a></li>
+					<li class="text-center"><a href="">Copyright © transcosmos.net  2015-2016</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div></body>
+</html>

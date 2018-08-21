@@ -246,14 +246,20 @@ class action extends app
 		echo intval($number);
 	}
 
-
 	public  function  toExclel()
 	{
+	    $courseid = $this->ev->get('courseid');
+
 		$mysqli = mysqli_connect('172.17.1.45', 'root', 'root', 'phpems');
-		$sql = 'select *  from x2_questionnaire';
-		$res = mysqli_query($mysqli, $sql);
+
+		$res = mysqli_query($mysqli,"select *  from x2_questionnaire where courseid='$courseid' ");
+
+
 		header("Content-type:application/vnd.ms-excel");
+
 		header("Content-Disposition:filename=phpems.xls");
+
+
 		echo "questionnaireid\t";
 		echo "userid\t";
 		echo "courseid\t";
@@ -261,22 +267,30 @@ class action extends app
 		echo "qadvice\t";
 		echo "qexpect\t";
 		echo "qother\t";
-		echo "qnon-attendance\t\n";
+		echo "qreason\t\n";
 		if (mysqli_num_rows($res) > 0) {
 			while ($row = mysqli_fetch_array($res)) {
-				echo $row['questionnaireid'] . "\t";
-				echo $row['userid'] . "\t";
-				echo $row['courseid'] . "\t";
-				echo $row['qthoughts'] . "\t";
-				echo $row['qadvice'] . "\t";
-				echo $row['qexpect'] . "\t";
-				echo $row['qother'] . "\t";
-				echo $row['qnon-attendance'] . "\t\n";
+//				echo $row['questionnaireid'] . "\t";
+//				echo $row['userid'] . "\t";
+//				echo $row['courseid'] . "\t";
+//				echo $row['qthoughts'] . "\t";
+//				echo $row['qadvice'] . "\t";
+//				echo $row['qexpect'] . "\t";
+//				echo $row['qother'] . "\t";
+//				echo $row['qreason'] . "\t\n";
+
+				echo iconv("UTF-8", "GB2312//IGNORE",$row['questionnaireid']) . "\t";
+				echo iconv("UTF-8", "GB2312//IGNORE",$row['userid']) . "\t";
+				echo iconv("UTF-8", "GB2312//IGNORE",$row['courseid']) . "\t";
+				echo iconv("UTF-8", "GB2312//IGNORE",$row['qthoughts']) . "\t";
+				echo iconv("UTF-8", "GB2312//IGNORE",$row['qadvice']) . "\t";
+				echo iconv("UTF-8", "GB2312//IGNORE",$row['qexpect']) . "\t";
+				echo iconv("UTF-8", "GB2312//IGNORE",$row['qother']) . "\t";
+				echo iconv("UTF-8", "GB2312//IGNORE",$row['qreason']) . "\t\n";
+
 			}
 		}
 	}
-
-
 
 
 	private function members()

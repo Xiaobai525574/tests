@@ -246,6 +246,37 @@ class action extends app
 		echo intval($number);
 	}
 
+	public  function  toExclel()
+	{
+		$mysqli = mysqli_connect('172.17.1.45', 'root', 'root', 'phpems');
+		$sql = 'select *  from x2_questionnaire';
+		$res = mysqli_query($mysqli, $sql);
+		header("Content-type:application/vnd.ms-excel");
+		header("Content-Disposition:filename=phpems.xls");
+		echo "questionnaireid\t";
+		echo "userid\t";
+		echo "courseid\t";
+		echo "qthoughts\t";
+		echo "qadvice\t";
+		echo "qexpect\t";
+		echo "qother\t";
+		echo "qreason\t\n";
+		if (mysqli_num_rows($res) > 0) {
+			while ($row = mysqli_fetch_array($res)) {
+				echo $row['questionnaireid'] . "\t";
+				echo $row['userid'] . "\t";
+				echo $row['courseid'] . "\t";
+				echo $row['qthoughts'] . "\t";
+				echo $row['qadvice'] . "\t";
+				echo $row['qexpect'] . "\t";
+				echo $row['qother'] . "\t";
+				echo $row['qreason'] . "\t\n";
+			}
+		}
+	}
+
+
+
 	private function members()
 	{
 		$courseid = $this->ev->get('courseid');
